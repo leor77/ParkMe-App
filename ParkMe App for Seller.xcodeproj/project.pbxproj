@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		574332833AC886BF6FCE044B /* Pods_ParkMe_App_for_SellerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD1D4E7100B8491FF30C2CF /* Pods_ParkMe_App_for_SellerUITests.framework */; };
+		5F47A65C1E2F1D8C004AAC74 /* RiderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47A65B1E2F1D8C004AAC74 /* RiderVC.swift */; };
+		5F47A65E1E3019F6004AAC74 /* DBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47A65D1E3019F6004AAC74 /* DBProvider.swift */; };
+		5F47A6601E301B22004AAC74 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47A65F1E301B22004AAC74 /* Constants.swift */; };
+		5F47A6621E30413E004AAC74 /* ParkingSpotHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47A6611E30413E004AAC74 /* ParkingSpotHandler.swift */; };
 		5F615B041DFA37D9001D873B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F615B031DFA37D9001D873B /* AppDelegate.swift */; };
-		5F615B061DFA37D9001D873B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F615B051DFA37D9001D873B /* ViewController.swift */; };
 		5F615B091DFA37D9001D873B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F615B071DFA37D9001D873B /* Main.storyboard */; };
 		5F615B0B1DFA37D9001D873B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F615B0A1DFA37D9001D873B /* Assets.xcassets */; };
 		5F615B0E1DFA37D9001D873B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F615B0C1DFA37D9001D873B /* LaunchScreen.storyboard */; };
 		5F615B191DFA37D9001D873B /* ParkMe_App_for_SellerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F615B181DFA37D9001D873B /* ParkMe_App_for_SellerTests.swift */; };
 		5F615B241DFA37D9001D873B /* ParkMe_App_for_SellerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F615B231DFA37D9001D873B /* ParkMe_App_for_SellerUITests.swift */; };
+		5F615B3A1DFA4273001D873B /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F615B391DFA4273001D873B /* SignInVC.swift */; };
+		5F615B3E1DFA5305001D873B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F615B3D1DFA5305001D873B /* GoogleService-Info.plist */; };
+		5F615B411DFF3E5D001D873B /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F615B401DFF3E5D001D873B /* AuthProvider.swift */; };
+		D1B78DF7868F0951FEE4D3A2 /* Pods_ParkMe_App_for_SellerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A345DAA5F97670D45DC7A268 /* Pods_ParkMe_App_for_SellerTests.framework */; };
+		D501230CDDDA8317496F3478 /* Pods_ParkMe_App_for_Seller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6319444D7D9F1E39C66E26 /* Pods_ParkMe_App_for_Seller.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C6319444D7D9F1E39C66E26 /* Pods_ParkMe_App_for_Seller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkMe_App_for_Seller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59F55D1F83CDCD3FE0972890 /* Pods-ParkMe App for Seller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkMe App for Seller.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkMe App for Seller/Pods-ParkMe App for Seller.release.xcconfig"; sourceTree = "<group>"; };
+		5C5DE41EB0BF2BFA9E6EF7B1 /* Pods-ParkMe App for Seller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkMe App for Seller.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkMe App for Seller/Pods-ParkMe App for Seller.debug.xcconfig"; sourceTree = "<group>"; };
+		5F47A65B1E2F1D8C004AAC74 /* RiderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderVC.swift; sourceTree = "<group>"; };
+		5F47A65D1E3019F6004AAC74 /* DBProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBProvider.swift; sourceTree = "<group>"; };
+		5F47A65F1E301B22004AAC74 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5F47A6611E30413E004AAC74 /* ParkingSpotHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpotHandler.swift; sourceTree = "<group>"; };
 		5F615B001DFA37D9001D873B /* ParkMe App for Seller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ParkMe App for Seller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F615B031DFA37D9001D873B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F615B051DFA37D9001D873B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5F615B081DFA37D9001D873B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F615B0A1DFA37D9001D873B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F615B0D1DFA37D9001D873B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +62,15 @@
 		5F615B1F1DFA37D9001D873B /* ParkMe App for SellerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ParkMe App for SellerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F615B231DFA37D9001D873B /* ParkMe_App_for_SellerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkMe_App_for_SellerUITests.swift; sourceTree = "<group>"; };
 		5F615B251DFA37D9001D873B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F615B391DFA4273001D873B /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		5F615B3D1DFA5305001D873B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5F615B401DFF3E5D001D873B /* AuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		A345DAA5F97670D45DC7A268 /* Pods_ParkMe_App_for_SellerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkMe_App_for_SellerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A89986B260D606DDEC890ED5 /* Pods-ParkMe App for SellerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkMe App for SellerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkMe App for SellerUITests/Pods-ParkMe App for SellerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB4FBDA7C2E4DA8776C31D73 /* Pods-ParkMe App for SellerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkMe App for SellerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkMe App for SellerTests/Pods-ParkMe App for SellerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BED5D09567E7F67EC2F89C38 /* Pods-ParkMe App for SellerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkMe App for SellerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkMe App for SellerTests/Pods-ParkMe App for SellerTests.release.xcconfig"; sourceTree = "<group>"; };
+		CAD1D4E7100B8491FF30C2CF /* Pods_ParkMe_App_for_SellerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkMe_App_for_SellerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10CD707C9143ADBCFCA73F1 /* Pods-ParkMe App for SellerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkMe App for SellerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkMe App for SellerUITests/Pods-ParkMe App for SellerUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D501230CDDDA8317496F3478 /* Pods_ParkMe_App_for_Seller.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B78DF7868F0951FEE4D3A2 /* Pods_ParkMe_App_for_SellerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				574332833AC886BF6FCE044B /* Pods_ParkMe_App_for_SellerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +108,8 @@
 				5F615B171DFA37D9001D873B /* ParkMe App for SellerTests */,
 				5F615B221DFA37D9001D873B /* ParkMe App for SellerUITests */,
 				5F615B011DFA37D9001D873B /* Products */,
+				FBE3966D609D76224F059929 /* Pods */,
+				7A5FC53627082D2612AB3864 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +126,16 @@
 		5F615B021DFA37D9001D873B /* ParkMe App for Seller */ = {
 			isa = PBXGroup;
 			children = (
+				5F615B3F1DFF3E2B001D873B /* Plugins */,
+				5F615B381DFA423E001D873B /* Controller */,
+				5F615B371DFA4239001D873B /* View */,
+				5F615B361DFA4233001D873B /* Model */,
 				5F615B031DFA37D9001D873B /* AppDelegate.swift */,
-				5F615B051DFA37D9001D873B /* ViewController.swift */,
 				5F615B071DFA37D9001D873B /* Main.storyboard */,
 				5F615B0A1DFA37D9001D873B /* Assets.xcassets */,
 				5F615B0C1DFA37D9001D873B /* LaunchScreen.storyboard */,
 				5F615B0F1DFA37D9001D873B /* Info.plist */,
+				5F615B3D1DFA5305001D873B /* GoogleService-Info.plist */,
 			);
 			path = "ParkMe App for Seller";
 			sourceTree = "<group>";
@@ -125,6 +158,63 @@
 			path = "ParkMe App for SellerUITests";
 			sourceTree = "<group>";
 		};
+		5F615B361DFA4233001D873B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5F615B371DFA4239001D873B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5F615B381DFA423E001D873B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5F615B391DFA4273001D873B /* SignInVC.swift */,
+				5F47A65B1E2F1D8C004AAC74 /* RiderVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		5F615B3F1DFF3E2B001D873B /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				5F615B401DFF3E5D001D873B /* AuthProvider.swift */,
+				5F47A65D1E3019F6004AAC74 /* DBProvider.swift */,
+				5F47A65F1E301B22004AAC74 /* Constants.swift */,
+				5F47A6611E30413E004AAC74 /* ParkingSpotHandler.swift */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+		7A5FC53627082D2612AB3864 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C6319444D7D9F1E39C66E26 /* Pods_ParkMe_App_for_Seller.framework */,
+				A345DAA5F97670D45DC7A268 /* Pods_ParkMe_App_for_SellerTests.framework */,
+				CAD1D4E7100B8491FF30C2CF /* Pods_ParkMe_App_for_SellerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBE3966D609D76224F059929 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C5DE41EB0BF2BFA9E6EF7B1 /* Pods-ParkMe App for Seller.debug.xcconfig */,
+				59F55D1F83CDCD3FE0972890 /* Pods-ParkMe App for Seller.release.xcconfig */,
+				BB4FBDA7C2E4DA8776C31D73 /* Pods-ParkMe App for SellerTests.debug.xcconfig */,
+				BED5D09567E7F67EC2F89C38 /* Pods-ParkMe App for SellerTests.release.xcconfig */,
+				A89986B260D606DDEC890ED5 /* Pods-ParkMe App for SellerUITests.debug.xcconfig */,
+				F10CD707C9143ADBCFCA73F1 /* Pods-ParkMe App for SellerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F615B281DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for Seller" */;
 			buildPhases = (
+				B686EB8459A2C6F456AB3FED /* [CP] Check Pods Manifest.lock */,
 				5F615AFC1DFA37D9001D873B /* Sources */,
 				5F615AFD1DFA37D9001D873B /* Frameworks */,
 				5F615AFE1DFA37D9001D873B /* Resources */,
+				08129E1E45D826BEBDAD75F3 /* [CP] Embed Pods Frameworks */,
+				A9F9CC6788720A34F7073F7C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +242,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F615B2B1DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for SellerTests" */;
 			buildPhases = (
+				AF41EEB6C5560A08C3F2392A /* [CP] Check Pods Manifest.lock */,
 				5F615B101DFA37D9001D873B /* Sources */,
 				5F615B111DFA37D9001D873B /* Frameworks */,
 				5F615B121DFA37D9001D873B /* Resources */,
+				A752530B9BF3E8E765A0F824 /* [CP] Embed Pods Frameworks */,
+				8C4CE8C042C0F4199F41F299 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F615B2E1DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for SellerUITests" */;
 			buildPhases = (
+				329FE439402C27E35313159B /* [CP] Check Pods Manifest.lock */,
 				5F615B1B1DFA37D9001D873B /* Sources */,
 				5F615B1C1DFA37D9001D873B /* Frameworks */,
 				5F615B1D1DFA37D9001D873B /* Resources */,
+				203C5D6461A1ADA786FFB170 /* [CP] Embed Pods Frameworks */,
+				4A989179E2EA9CE850B0342E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F615B0E1DFA37D9001D873B /* LaunchScreen.storyboard in Resources */,
+				5F615B3E1DFA5305001D873B /* GoogleService-Info.plist in Resources */,
 				5F615B0B1DFA37D9001D873B /* Assets.xcassets in Resources */,
 				5F615B091DFA37D9001D873B /* Main.storyboard in Resources */,
 			);
@@ -254,13 +354,156 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08129E1E45D826BEBDAD75F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParkMe App for Seller/Pods-ParkMe App for Seller-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		203C5D6461A1ADA786FFB170 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParkMe App for SellerUITests/Pods-ParkMe App for SellerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		329FE439402C27E35313159B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4A989179E2EA9CE850B0342E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParkMe App for SellerUITests/Pods-ParkMe App for SellerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C4CE8C042C0F4199F41F299 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParkMe App for SellerTests/Pods-ParkMe App for SellerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A752530B9BF3E8E765A0F824 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParkMe App for SellerTests/Pods-ParkMe App for SellerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9F9CC6788720A34F7073F7C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParkMe App for Seller/Pods-ParkMe App for Seller-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF41EEB6C5560A08C3F2392A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B686EB8459A2C6F456AB3FED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5F615AFC1DFA37D9001D873B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F615B061DFA37D9001D873B /* ViewController.swift in Sources */,
+				5F615B411DFF3E5D001D873B /* AuthProvider.swift in Sources */,
+				5F615B3A1DFA4273001D873B /* SignInVC.swift in Sources */,
+				5F47A65E1E3019F6004AAC74 /* DBProvider.swift in Sources */,
 				5F615B041DFA37D9001D873B /* AppDelegate.swift in Sources */,
+				5F47A65C1E2F1D8C004AAC74 /* RiderVC.swift in Sources */,
+				5F47A6621E30413E004AAC74 /* ParkingSpotHandler.swift in Sources */,
+				5F47A6601E301B22004AAC74 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +653,7 @@
 		};
 		5F615B291DFA37D9001D873B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C5DE41EB0BF2BFA9E6EF7B1 /* Pods-ParkMe App for Seller.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ParkMe App for Seller/Info.plist";
@@ -422,6 +666,7 @@
 		};
 		5F615B2A1DFA37D9001D873B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59F55D1F83CDCD3FE0972890 /* Pods-ParkMe App for Seller.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ParkMe App for Seller/Info.plist";
@@ -434,6 +679,7 @@
 		};
 		5F615B2C1DFA37D9001D873B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB4FBDA7C2E4DA8776C31D73 /* Pods-ParkMe App for SellerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -448,6 +694,7 @@
 		};
 		5F615B2D1DFA37D9001D873B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BED5D09567E7F67EC2F89C38 /* Pods-ParkMe App for SellerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -462,6 +709,7 @@
 		};
 		5F615B2F1DFA37D9001D873B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A89986B260D606DDEC890ED5 /* Pods-ParkMe App for SellerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "ParkMe App for SellerUITests/Info.plist";
@@ -475,6 +723,7 @@
 		};
 		5F615B301DFA37D9001D873B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F10CD707C9143ADBCFCA73F1 /* Pods-ParkMe App for SellerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "ParkMe App for SellerUITests/Info.plist";
@@ -505,6 +754,7 @@
 				5F615B2A1DFA37D9001D873B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F615B2B1DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for SellerTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +763,7 @@
 				5F615B2D1DFA37D9001D873B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F615B2E1DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for SellerUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +772,7 @@
 				5F615B301DFA37D9001D873B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
