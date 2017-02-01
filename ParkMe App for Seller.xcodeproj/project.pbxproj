@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		574332833AC886BF6FCE044B /* Pods_ParkMe_App_for_SellerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD1D4E7100B8491FF30C2CF /* Pods_ParkMe_App_for_SellerUITests.framework */; };
+		5F0BC43D1E42751D0031B26D /* RequesterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BC43C1E42751D0031B26D /* RequesterHandler.swift */; };
 		5F47A65C1E2F1D8C004AAC74 /* RiderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47A65B1E2F1D8C004AAC74 /* RiderVC.swift */; };
 		5F47A65E1E3019F6004AAC74 /* DBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47A65D1E3019F6004AAC74 /* DBProvider.swift */; };
 		5F47A6601E301B22004AAC74 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47A65F1E301B22004AAC74 /* Constants.swift */; };
@@ -46,6 +47,7 @@
 		1C6319444D7D9F1E39C66E26 /* Pods_ParkMe_App_for_Seller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkMe_App_for_Seller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F55D1F83CDCD3FE0972890 /* Pods-ParkMe App for Seller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkMe App for Seller.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkMe App for Seller/Pods-ParkMe App for Seller.release.xcconfig"; sourceTree = "<group>"; };
 		5C5DE41EB0BF2BFA9E6EF7B1 /* Pods-ParkMe App for Seller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkMe App for Seller.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkMe App for Seller/Pods-ParkMe App for Seller.debug.xcconfig"; sourceTree = "<group>"; };
+		5F0BC43C1E42751D0031B26D /* RequesterHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequesterHandler.swift; sourceTree = "<group>"; };
 		5F47A65B1E2F1D8C004AAC74 /* RiderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderVC.swift; sourceTree = "<group>"; };
 		5F47A65D1E3019F6004AAC74 /* DBProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBProvider.swift; sourceTree = "<group>"; };
 		5F47A65F1E301B22004AAC74 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				5F47A65D1E3019F6004AAC74 /* DBProvider.swift */,
 				5F47A65F1E301B22004AAC74 /* Constants.swift */,
 				5F47A6611E30413E004AAC74 /* ParkingSpotHandler.swift */,
+				5F0BC43C1E42751D0031B26D /* RequesterHandler.swift */,
 			);
 			name = Plugins;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				5F47A65C1E2F1D8C004AAC74 /* RiderVC.swift in Sources */,
 				5F47A6621E30413E004AAC74 /* ParkingSpotHandler.swift in Sources */,
 				5F47A6601E301B22004AAC74 /* Constants.swift in Sources */,
+				5F0BC43D1E42751D0031B26D /* RequesterHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
