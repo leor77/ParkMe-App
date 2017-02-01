@@ -147,6 +147,7 @@
                     </view>
                     <connections>
                         <outlet property="myMap" destination="Aqi-NB-JyO" id="m00-Df-Mjd"/>
+                        <outlet property="sellParkingSpotButton" destination="15A-pr-ZT6" id="7Xg-vT-xOl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIc-3P-Y6L" userLabel="First Responder" sceneMemberID="firstResponder"/>

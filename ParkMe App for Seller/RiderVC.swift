@@ -3,23 +3,31 @@
 import UIKit
 import MapKit
 
-class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, ParkerController {
+class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, ParkerController, sellerController {
     
 @IBOutlet weak var myMap: MKMapView!
+    @IBOutlet weak var sellParkingSpotButton: UIButton!
+    
     
     private var locationManager = CLLocationManager();
     private var userLocation: CLLocationCoordinate2D?;
     private var parkingSpotLocation: CLLocationCoordinate2D?;
-    private var requestAlive = false;
+    
+    private var parkerCancelledRequest = false;
+    private var canSellSpot = true;
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        initializeLocationMgr();
-
+        initializeLocationMgr()
+        
+        ParkingHandler.Instance.sellerListenToMsgs()
+        ParkingHandler.Instance.delegate = self
+        
     }
     
     private func initializeLocationMgr() {
+        
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.requestWhenInUseAuthorization();
@@ -41,18 +49,32 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
             
         }
     }
+    
+    func canSellSpot(delegateCalled: Bool) {
+        if (delegateCalled){
+            sellParkingSpotButton.setTitle("Cancel", for: UIControlState.normal);
+            canSellSpot = false;
+        } else {
+            sellParkingSpotButton.setTitle("Sell Parking Spot", for: UIControlState.normal)
+            canSellSpot = true;
+        }
+    }
 
     @IBAction func requestSpot(_ sender: AnyObject) {
-        
-        ParkingHandler.Instance.requestSpot(latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude))
-    }
+            if (canSellSpot) {
+                ParkingHandler.Instance.requestSpot(latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude))
+            } else {
+                parkerCancelledRequest = true;
+                ParkingHandler.Instance.sellerCancelSpot();
+            }
+    } // Sell Parking Spot
     
     @IBAction func sellSpot(_ sender: Any) {
                 
         RequesterHandler.Instance.delegate = self;
         RequesterHandler.Instance.listenToRequests();
-
-    }
+        
+    } // Request Parking Spot
     
     func acceptSpot(lat: Double, long: Double) {
 
