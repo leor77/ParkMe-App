@@ -3,8 +3,14 @@
 import Foundation
 import FirebaseDatabase
 
+protocol ParkerController: class {
+    func acceptSpot(lat: Double, long: Double);
+}
+
 class RequesterHandler {
     static let _instance = RequesterHandler();
+    
+    weak var delegate: ParkerController?;
     
     var requester = "";
     var requester_id = "";
@@ -14,6 +20,21 @@ class RequesterHandler {
         return _instance;
     }
     
+    func listenToRequests(){
+        
+        DBProvider.Instance.requestRef.observe(FIRDataEventType.childAdded){
+            (snapshot: FIRDataSnapshot) in
+            if let data = snapshot.value as? NSDictionary {
+                if let latitude = data[Constants.LATITUDE] as?
+                    Double {
+                    if let longitude = data[Constants.LONGITUDE] as?
+                        Double {
+                        self.delegate?.acceptSpot(lat: latitude, long: longitude)
+                    }
+                }
+            }
+        }
+    }
     
     
 }

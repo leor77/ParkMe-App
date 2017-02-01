@@ -139,7 +139,6 @@
                                     <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="requestSpot:" destination="mrn-Dt-Nke" eventType="touchUpInside" id="KlY-w9-Q70"/>
                                     <action selector="sellSpot:" destination="mrn-Dt-Nke" eventType="touchUpInside" id="LlC-da-MUI"/>
                                 </connections>
                             </button>

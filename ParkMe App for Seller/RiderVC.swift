@@ -16,7 +16,6 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
         
         super.viewDidLoad()
         initializeLocationMgr();
-        ParkingHandler.Instance.listenToRequests();
 
     }
     
@@ -49,11 +48,10 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
     }
     
     @IBAction func sellSpot(_ sender: Any) {
-        
-        initializeLocationMgr();
-        
-        ParkingHandler.Instance.delegate = self;
-        ParkingHandler.Instance.listenToRequests();
+                
+        RequesterHandler.Instance.delegate = self;
+        RequesterHandler.Instance.listenToRequests();
+
     }
     
     func acceptSpot(lat: Double, long: Double) {
