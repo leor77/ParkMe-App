@@ -4,6 +4,8 @@ import FirebaseDatabase
 
 protocol sellerController: class {
     func canSellSpot(delegateCalled:Bool)
+    func requesterAcceptedSpot(requestAccepted: Bool, requesterName: String)
+    func updateRequesterLocation(lat: Double, long: Double)
 }
 
 class ParkingHandler {
@@ -43,8 +45,20 @@ class ParkingHandler {
                 }
             }
         }
+     
+        DBProvider.Instance.requestAccepted.observe(FIRDataEventType.childAdded) { (snapshot: FIRDataSnapshot) in
+            
+            if let data = snapshot.value as? NSDictionary {
+                if let name = data[Constants.NAME] as? String {
+                    if self.requester == "" {
+                        self.requester = name;
+                        self.delegate?.requesterAcceptedSpot(requestAccepted: true, requesterName: self.requester)
+                    }
+                }
+            }
+            
+        }
     }
-    
     
     func requestSpot(latitude: Double, longitude: Double){
         let data: Dictionary<String, Any> = [Constants.NAME: requester, Constants.LATITUDE: latitude, Constants.LONGITUDE: longitude];
@@ -53,5 +67,6 @@ class ParkingHandler {
     
     func sellerCancelSpot(){
         DBProvider.Instance.requestRef.child(requester_id).removeValue();
+        
     }
 }

@@ -36,5 +36,12 @@ class RequesterHandler {
         }
     }
     
+    func acceptedParkingSpot(lat: Double, long: Double){
+        let data: Dictionary<String, Any> = [Constants.LATITUDE: lat, Constants.LONGITUDE: long]
+        
+        DBProvider.Instance.requestAccepted.childByAutoId().setValue(data);
+        
+    }
+    
     
 }

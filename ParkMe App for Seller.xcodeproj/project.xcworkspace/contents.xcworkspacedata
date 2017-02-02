@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ParkMe App for Seller.xcodeproj">
+      location = "self:/Users/elybenari/Desktop/ParkMe App/ParkMe App/ParkMe App for Seller.xcodeproj">
    </FileRef>
 </Workspace>

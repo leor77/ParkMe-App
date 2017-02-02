@@ -14,12 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ParkMe App for Seller.xcscheme</key>
+		<key>Pods-ParkMe App Tests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ParkMe App for SellerTests.xcscheme</key>
+		<key>Pods-ParkMe App for Seller.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

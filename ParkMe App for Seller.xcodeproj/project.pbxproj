@@ -52,16 +52,16 @@
 		5F47A65D1E3019F6004AAC74 /* DBProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBProvider.swift; sourceTree = "<group>"; };
 		5F47A65F1E301B22004AAC74 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5F47A6611E30413E004AAC74 /* ParkingSpotHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpotHandler.swift; sourceTree = "<group>"; };
-		5F615B001DFA37D9001D873B /* ParkMe App for Seller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ParkMe App for Seller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F615B001DFA37D9001D873B /* ParkMe App for Seller for Seller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ParkMe App for Seller for Seller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F615B031DFA37D9001D873B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F615B081DFA37D9001D873B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F615B0A1DFA37D9001D873B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F615B0D1DFA37D9001D873B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F615B0F1DFA37D9001D873B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F615B141DFA37D9001D873B /* ParkMe App for SellerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ParkMe App for SellerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F615B141DFA37D9001D873B /* ParkMe App for Seller for SellerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ParkMe App for Seller for SellerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F615B181DFA37D9001D873B /* ParkMe_App_for_SellerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkMe_App_for_SellerTests.swift; sourceTree = "<group>"; };
 		5F615B1A1DFA37D9001D873B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F615B1F1DFA37D9001D873B /* ParkMe App for SellerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ParkMe App for SellerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F615B1F1DFA37D9001D873B /* ParkMe App for Seller for SellerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ParkMe App for Seller for SellerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F615B231DFA37D9001D873B /* ParkMe_App_for_SellerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkMe_App_for_SellerUITests.swift; sourceTree = "<group>"; };
 		5F615B251DFA37D9001D873B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F615B391DFA4273001D873B /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -118,9 +118,9 @@
 		5F615B011DFA37D9001D873B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F615B001DFA37D9001D873B /* ParkMe App for Seller.app */,
-				5F615B141DFA37D9001D873B /* ParkMe App for SellerTests.xctest */,
-				5F615B1F1DFA37D9001D873B /* ParkMe App for SellerUITests.xctest */,
+				5F615B001DFA37D9001D873B /* ParkMe App for Seller for Seller.app */,
+				5F615B141DFA37D9001D873B /* ParkMe App for Seller for SellerTests.xctest */,
+				5F615B1F1DFA37D9001D873B /* ParkMe App for Seller for SellerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,9 +221,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5F615AFF1DFA37D9001D873B /* ParkMe App for Seller */ = {
+		5F615AFF1DFA37D9001D873B /* ParkMe App for Seller for Seller */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F615B281DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for Seller" */;
+			buildConfigurationList = 5F615B281DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for Seller for Seller" */;
 			buildPhases = (
 				B686EB8459A2C6F456AB3FED /* [CP] Check Pods Manifest.lock */,
 				5F615AFC1DFA37D9001D873B /* Sources */,
@@ -236,14 +236,14 @@
 			);
 			dependencies = (
 			);
-			name = "ParkMe App for Seller";
+			name = "ParkMe App for Seller for Seller";
 			productName = "ParkMe App for Seller";
-			productReference = 5F615B001DFA37D9001D873B /* ParkMe App for Seller.app */;
+			productReference = 5F615B001DFA37D9001D873B /* ParkMe App for Seller for Seller.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5F615B131DFA37D9001D873B /* ParkMe App for SellerTests */ = {
+		5F615B131DFA37D9001D873B /* ParkMe App for Seller for SellerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F615B2B1DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for SellerTests" */;
+			buildConfigurationList = 5F615B2B1DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for Seller for SellerTests" */;
 			buildPhases = (
 				AF41EEB6C5560A08C3F2392A /* [CP] Check Pods Manifest.lock */,
 				5F615B101DFA37D9001D873B /* Sources */,
@@ -257,14 +257,14 @@
 			dependencies = (
 				5F615B161DFA37D9001D873B /* PBXTargetDependency */,
 			);
-			name = "ParkMe App for SellerTests";
+			name = "ParkMe App for Seller for SellerTests";
 			productName = "ParkMe App for SellerTests";
-			productReference = 5F615B141DFA37D9001D873B /* ParkMe App for SellerTests.xctest */;
+			productReference = 5F615B141DFA37D9001D873B /* ParkMe App for Seller for SellerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5F615B1E1DFA37D9001D873B /* ParkMe App for SellerUITests */ = {
+		5F615B1E1DFA37D9001D873B /* ParkMe App for Seller for SellerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F615B2E1DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for SellerUITests" */;
+			buildConfigurationList = 5F615B2E1DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for Seller for SellerUITests" */;
 			buildPhases = (
 				329FE439402C27E35313159B /* [CP] Check Pods Manifest.lock */,
 				5F615B1B1DFA37D9001D873B /* Sources */,
@@ -278,9 +278,9 @@
 			dependencies = (
 				5F615B211DFA37D9001D873B /* PBXTargetDependency */,
 			);
-			name = "ParkMe App for SellerUITests";
+			name = "ParkMe App for Seller for SellerUITests";
 			productName = "ParkMe App for SellerUITests";
-			productReference = 5F615B1F1DFA37D9001D873B /* ParkMe App for SellerUITests.xctest */;
+			productReference = 5F615B1F1DFA37D9001D873B /* ParkMe App for Seller for SellerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -322,9 +322,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5F615AFF1DFA37D9001D873B /* ParkMe App for Seller */,
-				5F615B131DFA37D9001D873B /* ParkMe App for SellerTests */,
-				5F615B1E1DFA37D9001D873B /* ParkMe App for SellerUITests */,
+				5F615AFF1DFA37D9001D873B /* ParkMe App for Seller for Seller */,
+				5F615B131DFA37D9001D873B /* ParkMe App for Seller for SellerTests */,
+				5F615B1E1DFA37D9001D873B /* ParkMe App for Seller for SellerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -532,12 +532,12 @@
 /* Begin PBXTargetDependency section */
 		5F615B161DFA37D9001D873B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5F615AFF1DFA37D9001D873B /* ParkMe App for Seller */;
+			target = 5F615AFF1DFA37D9001D873B /* ParkMe App for Seller for Seller */;
 			targetProxy = 5F615B151DFA37D9001D873B /* PBXContainerItemProxy */;
 		};
 		5F615B211DFA37D9001D873B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5F615AFF1DFA37D9001D873B /* ParkMe App for Seller */;
+			target = 5F615AFF1DFA37D9001D873B /* ParkMe App for Seller for Seller */;
 			targetProxy = 5F615B201DFA37D9001D873B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -692,7 +692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Leor-Benari.ParkMe-App-for-SellerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParkMe App for Seller.app/ParkMe App for Seller";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParkMe App for Seller for Seller.app/ParkMe App for Seller for Seller";
 			};
 			name = Debug;
 		};
@@ -707,7 +707,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Leor-Benari.ParkMe-App-for-SellerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParkMe App for Seller.app/ParkMe App for Seller";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParkMe App for Seller for Seller.app/ParkMe App for Seller for Seller";
 			};
 			name = Release;
 		};
@@ -751,7 +751,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F615B281DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for Seller" */ = {
+		5F615B281DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for Seller for Seller" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F615B291DFA37D9001D873B /* Debug */,
@@ -760,7 +760,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F615B2B1DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for SellerTests" */ = {
+		5F615B2B1DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for Seller for SellerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F615B2C1DFA37D9001D873B /* Debug */,
@@ -769,7 +769,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F615B2E1DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for SellerUITests" */ = {
+		5F615B2E1DFA37D9001D873B /* Build configuration list for PBXNativeTarget "ParkMe App for Seller for SellerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F615B2F1DFA37D9001D873B /* Debug */,
