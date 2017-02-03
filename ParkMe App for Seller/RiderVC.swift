@@ -18,7 +18,7 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
     private var acceptedSpot = false;
     private var canSellSpot = true;
     
-    //private var timer = Timer()
+    
     
     override func viewDidLoad() {
         
@@ -33,15 +33,15 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
     private func initializeLocationMgr() {
         
         locationManager.delegate = self;
+        locationManager.requestAlwaysAuthorization();
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        locationManager.requestWhenInUseAuthorization();
         locationManager.startUpdatingLocation();
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locationManager.location?.coordinate{
             userLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude);
-            let region = MKCoordinateRegion(center: userLocation!, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01));
+            let region = MKCoordinateRegion(center: userLocation!, span: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001));
             
             
             

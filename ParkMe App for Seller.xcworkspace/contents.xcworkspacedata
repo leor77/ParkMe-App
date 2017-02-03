@@ -2,8 +2,54 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ParkMe App for Seller.xcodeproj">
+      location = "group:/Users/elybenari/Desktop/ParkMe App/ParkMe App for Seller/ParkMe App for Seller.xcodeproj">
    </FileRef>
+   <Group
+      location = "container:"
+      name = "ParkMe App for Seller">
+      <FileRef
+         location = "group:ParkMe App/ParkingSpotHandler.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/RiderVC.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/RequesterHandler.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/Base.lproj">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/GoogleService-Info.plist">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/SignInVC.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/Constants.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/Assets.xcassets">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/AppDelegate.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/AuthProvider.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/DBProvider.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/HandlerForSeller.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/ParkingSpotHandlerForSeller.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ParkMe App/Info.plist">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

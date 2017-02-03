@@ -35,6 +35,27 @@ class RequesterHandler {
             }
         }
     }
+
+//    
+//    func findClosestSpot(){
+//        
+//        DBProvider.Instance.requestRef.observe(FIRDataEventType.childAdded){
+//            (snapshot: FIRDataSnapshot) in
+//            if let data = snapshot.value as? NSDictionary {
+//                if let latitude = data[Constants.LATITUDE] as?
+//                    Double {
+//                    if let longitude = data[Constants.LONGITUDE] as?
+//                        Double {
+//                        
+//                        DBProvider.Instance.requestRef
+//                        
+//                        
+//                        self.delegate?.acceptSpot(lat: latitude, long: longitude)
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     func acceptedParkingSpot(lat: Double, long: Double){
         let data: Dictionary<String, Any> = [Constants.LATITUDE: lat, Constants.LONGITUDE: long]
@@ -42,6 +63,4 @@ class RequesterHandler {
         DBProvider.Instance.requestAccepted.childByAutoId().setValue(data);
         
     }
-    
-    
 }

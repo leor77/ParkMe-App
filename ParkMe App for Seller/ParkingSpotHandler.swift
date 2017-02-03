@@ -56,7 +56,6 @@ class ParkingHandler {
                     }
                 }
             }
-            
         }
     }
     
@@ -67,6 +66,5 @@ class ParkingHandler {
     
     func sellerCancelSpot(){
         DBProvider.Instance.requestRef.child(requester_id).removeValue();
-        
     }
-}
+} // 

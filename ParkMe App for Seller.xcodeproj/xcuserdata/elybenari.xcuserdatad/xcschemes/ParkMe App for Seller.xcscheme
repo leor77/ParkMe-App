@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5F615AFF1DFA37D9001D873B"
-               BuildableName = "ParkMe App for Seller.app"
-               BlueprintName = "ParkMe App for Seller"
+               BuildableName = "ParkMe App for Seller for Seller.app"
+               BlueprintName = "ParkMe App for Seller for Seller"
                ReferencedContainer = "container:ParkMe App for Seller.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5F615B131DFA37D9001D873B"
-               BuildableName = "ParkMe App for SellerTests.xctest"
-               BlueprintName = "ParkMe App for SellerTests"
+               BuildableName = "ParkMe App for Seller for SellerTests.xctest"
+               BlueprintName = "ParkMe App for Seller for SellerTests"
                ReferencedContainer = "container:ParkMe App for Seller.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,8 +43,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5F615B1E1DFA37D9001D873B"
-               BuildableName = "ParkMe App for SellerUITests.xctest"
-               BlueprintName = "ParkMe App for SellerUITests"
+               BuildableName = "ParkMe App for Seller for SellerUITests.xctest"
+               BlueprintName = "ParkMe App for Seller for SellerUITests"
                ReferencedContainer = "container:ParkMe App for Seller.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -53,8 +53,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F615AFF1DFA37D9001D873B"
-            BuildableName = "ParkMe App for Seller.app"
-            BlueprintName = "ParkMe App for Seller"
+            BuildableName = "ParkMe App for Seller for Seller.app"
+            BlueprintName = "ParkMe App for Seller for Seller"
             ReferencedContainer = "container:ParkMe App for Seller.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,8 +76,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F615AFF1DFA37D9001D873B"
-            BuildableName = "ParkMe App for Seller.app"
-            BlueprintName = "ParkMe App for Seller"
+            BuildableName = "ParkMe App for Seller for Seller.app"
+            BlueprintName = "ParkMe App for Seller for Seller"
             ReferencedContainer = "container:ParkMe App for Seller.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -107,8 +107,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F615AFF1DFA37D9001D873B"
-            BuildableName = "ParkMe App for Seller.app"
-            BlueprintName = "ParkMe App for Seller"
+            BuildableName = "ParkMe App for Seller for Seller.app"
+            BlueprintName = "ParkMe App for Seller for Seller"
             ReferencedContainer = "container:ParkMe App for Seller.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
