@@ -1,10 +1,10 @@
 
 import Foundation
 import FirebaseDatabase
+import FirebaseAuth
 
 protocol sellerController: class {
     func canSellSpot(delegateCalled:Bool)
-    func requesterAcceptedSpot(requestAccepted: Bool, requesterName: String)
     func updateRequesterLocation(lat: Double, long: Double)
 }
 
@@ -17,6 +17,8 @@ class ParkingHandler {
     var requester = "";
     var requester_id = "";
     var seller_id = "";
+    
+    
     
     static var Instance: ParkingHandler {
         return _instance;
@@ -46,17 +48,19 @@ class ParkingHandler {
             }
         }
      
-        DBProvider.Instance.requestAccepted.observe(FIRDataEventType.childAdded) { (snapshot: FIRDataSnapshot) in
-            
-            if let data = snapshot.value as? NSDictionary {
-                if let name = data[Constants.NAME] as? String {
-                    if self.requester == "" {
-                        self.requester = name;
-                        self.delegate?.requesterAcceptedSpot(requestAccepted: true, requesterName: self.requester)
-                    }
-                }
-            }
-        }
+//        DBProvider.Instance.requestAccepted.observe(FIRDataEventType.childAdded) { (snapshot: FIRDataSnapshot) in
+//            
+//            if let data = snapshot.value as? NSDictionary {
+//                if let name = data[Constants.NAME] as? String {
+//                    if self.requester == "" {
+//                        self.requester = name;
+//                        self.delegate?.requesterAcceptedSpot(requestAccepted: true, requesterName: self.requester)
+//                    }
+//                }
+//            }
+//        }
+//
+    
     }
     
     func requestSpot(latitude: Double, longitude: Double){

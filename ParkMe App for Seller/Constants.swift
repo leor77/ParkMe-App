@@ -5,6 +5,7 @@ import Foundation
 class Constants {
     
     static let REQUESTER = "requester"
+    static let SELLER = "seller"
     static let EMAIL = "email"
     static let PASSWORD = "password"
     static let DATA = "data"

@@ -8,7 +8,6 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
 @IBOutlet weak var myMap: MKMapView!
     @IBOutlet weak var sellParkingSpotButton: UIButton!
     
-    
     private var locationManager = CLLocationManager();
     private var userLocation: CLLocationCoordinate2D?;
     private var requesterLocation: CLLocationCoordinate2D?;
@@ -17,8 +16,6 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
     private var parkerCancelledRequest = false;
     private var acceptedSpot = false;
     private var canSellSpot = true;
-    
-    
     
     override func viewDidLoad() {
         
@@ -42,8 +39,6 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
         if let location = locationManager.location?.coordinate{
             userLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude);
             let region = MKCoordinateRegion(center: userLocation!, span: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001));
-            
-            
             
             myMap.setRegion(region, animated: true);
             myMap.removeAnnotations(myMap.annotations);
@@ -79,12 +74,12 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
         }
     }
     
-    func requesterAcceptedSpot(requestAccepted: Bool, requesterName: String) {
-        if requestAccepted {
-            alertUser(title: "Parking Spot Sold", message: "Your parking spot was sold to \(requesterName)")
-        }
-        
-    }
+//    func requesterAcceptedSpot(requestAccepted: Bool, requesterName: String) {
+//        if requestAccepted {
+//            alertUser(title: "Parking Spot Sold", message: "Your parking spot was sold to \(requesterName)")
+//        }
+//        
+//    }
 
     @IBAction func requestSpot(_ sender: AnyObject) {
             if (canSellSpot) {
@@ -126,7 +121,6 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
                 self.acceptedSpot = true;
                 
                 RequesterHandler.Instance.acceptedParkingSpot(lat: Double(self.userLocation!.latitude), long: Double(self.userLocation!.longitude))
-                
             })
             
             let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil);

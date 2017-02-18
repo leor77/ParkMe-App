@@ -3,6 +3,7 @@
 
 import Foundation
 import FirebaseDatabase
+import FirebaseAuth
 
 class DBProvider {
 
@@ -11,12 +12,19 @@ class DBProvider {
         return _instance;
     }
     
+    let user = FIRAuth.auth()?.currentUser
+
+    
     var dbRef: FIRDatabaseReference {
         return FIRDatabase.database().reference();
     }
     
     var requesterRef: FIRDatabaseReference {
         return dbRef.child(Constants.REQUESTER);
+    }
+    
+    var sellerRef: FIRDatabaseReference {
+        return dbRef.child(Constants.SELLER);
     }
     
     // request ref
@@ -34,7 +42,8 @@ class DBProvider {
     func saveUser(withID: String, email: String, password: String) {
         let data: Dictionary<String, Any> = [Constants.EMAIL: email, Constants.PASSWORD: password, Constants.isRequester: true];
         
-        requesterRef.child(withID).child(Constants.DATA).setValue(data);
+        requesterRef.child(withID).child(Constants.DATA).setValue(data); // save requester to DB
+        sellerRef.child(withID).child(Constants.DATA).setValue(data); // save seller to DB
         
     }
     
