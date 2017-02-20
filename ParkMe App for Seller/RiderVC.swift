@@ -113,6 +113,13 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
         }
     }
     
+    @IBAction func switchToRequests(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "showRequestVC", sender: nil)
+        
+    }
+    
+    
     private func parkingSpotRequest(title: String, message: String, requestAlive: Bool){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert);

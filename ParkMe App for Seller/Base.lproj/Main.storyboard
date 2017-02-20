@@ -142,17 +142,85 @@
                                     <action selector="requestSpot:" destination="mrn-Dt-Nke" eventType="touchUpInside" id="jMF-8p-93w"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olf-aq-jci">
+                                <rect key="frame" x="16" y="629" width="343" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.3921568627" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="Switch to Request Panel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="switchToRequests:" destination="mrn-Dt-Nke" eventType="touchUpInside" id="eWa-tz-KTM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="myMap" destination="Aqi-NB-JyO" id="m00-Df-Mjd"/>
                         <outlet property="sellParkingSpotButton" destination="15A-pr-ZT6" id="7Xg-vT-xOl"/>
+                        <segue destination="x0Q-K7-o4T" kind="show" identifier="showRequestVC" id="Idn-Zu-Ocn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIc-3P-Y6L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="845.60000000000002" y="122.78860569715144"/>
         </scene>
+        <!--Available Parking Spots-->
+        <scene sceneID="e3s-cL-5NY">
+            <objects>
+                <tableViewController id="I8e-Dk-MBO" customClass="RequestVC" customModule="ParkMe_App_for_Seller_for_Seller" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q4U-T1-LUg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="iNu-xY-naR">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iNu-xY-naR" id="Tbk-1Y-Pd8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="I8e-Dk-MBO" id="eC1-Ia-GKe"/>
+                            <outlet property="delegate" destination="I8e-Dk-MBO" id="mtF-8t-F9Y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Available Parking Spots" id="4JI-hF-vgw">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Wt7-8g-iWz" userLabel="Back">
+                            <connections>
+                                <segue destination="mrn-Dt-Nke" kind="show" identifier="backToMain" id="RKz-Pv-jVt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lGB-dc-V7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1791" y="817"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CpU-kI-EzA">
+            <objects>
+                <navigationController id="x0Q-K7-o4T" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lDE-I6-NLw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="I8e-Dk-MBO" kind="relationship" relationship="rootViewController" id="hye-lE-tPQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g4g-Th-qj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="817"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="RKz-Pv-jVt"/>
+    </inferredMetricsTieBreakers>
 </document>
