@@ -5,12 +5,12 @@ import MapKit
 
 class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, ParkerController, sellerController {
     
-@IBOutlet weak var myMap: MKMapView!
+    @IBOutlet weak var myMap: MKMapView!
     @IBOutlet weak var sellParkingSpotButton: UIButton!
     
     private var locationManager = CLLocationManager();
     private var userLocation: CLLocationCoordinate2D?;
-    private var requesterLocation: CLLocationCoordinate2D?;
+    private var sellerLocation: CLLocationCoordinate2D?;
     private var parkingSpotLocation: CLLocationCoordinate2D?;
     
     private var parkerCancelledRequest = false;
@@ -43,12 +43,12 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
             myMap.setRegion(region, animated: true);
             myMap.removeAnnotations(myMap.annotations);
             
-            if requesterLocation != nil {
+            if sellerLocation != nil {
                 if !canSellSpot {
-                    let requesterSpot = MKPointAnnotation()
-                    requesterSpot.coordinate = requesterLocation!
-                    requesterSpot.title = "Requester"
-                    myMap.addAnnotation(requesterSpot)
+                    let sellerSpot = MKPointAnnotation()
+                    sellerSpot.coordinate = sellerLocation!
+                    sellerSpot.title = "Seller"
+                    myMap.addAnnotation(sellerSpot)
                 }
             }
             
@@ -61,7 +61,7 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
     }
     
     func updateRequesterLocation(lat: Double, long: Double) {
-        requesterLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        sellerLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
     }
     
     func canSellSpot(delegateCalled: Bool) {
@@ -80,22 +80,24 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
 //        }
 //        
 //    }
-
-    @IBAction func requestSpot(_ sender: AnyObject) {
-            if (canSellSpot) {
-                ParkingHandler.Instance.requestSpot(latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude))
-            } else {
-                parkerCancelledRequest = true;
-                ParkingHandler.Instance.sellerCancelSpot();
-            }
-    } // Sell Parking Spot
+    
     
     @IBAction func sellSpot(_ sender: Any) {
-                
+        if (canSellSpot) {
+            ParkingHandler.Instance.requestSpot(latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude))
+        } else {
+            parkerCancelledRequest = true;
+            ParkingHandler.Instance.sellerCancelSpot();
+        }
+    }
+    
+    
+    @IBAction func requestSpot(_ sender: Any) {
+        
         RequesterHandler.Instance.delegate = self;
         RequesterHandler.Instance.listenToRequests();
         
-    } // Request Parking Spot
+    }
     
     func acceptSpot(lat: Double, long: Double) {
 

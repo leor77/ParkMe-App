@@ -14,61 +14,59 @@ class ParkingHandler {
     weak var delegate: sellerController?;
     
     var seller = "";
-    var requester = "";
-    var requester_id = "";
     var seller_id = "";
-    
-    
     
     static var Instance: ParkingHandler {
         return _instance;
     }
     
     func sellerListenToMsgs() {
-        DBProvider.Instance.requestRef.observe(FIRDataEventType.childAdded) { (snapshot : FIRDataSnapshot) in
+        DBProvider.Instance.sellRequestRef.observe(FIRDataEventType.childAdded) { (snapshot : FIRDataSnapshot) in
             
             if let data = snapshot.value as? NSDictionary {
                 if let name = data[Constants.NAME] as? String {
-                    if name == self.requester {
-                        self.requester_id = snapshot.key;
+                    if name == self.seller {
+                        self.seller_id = snapshot.key;
                         self.delegate?.canSellSpot(delegateCalled: true)
                     }
                 }
             }
         }
         
-        DBProvider.Instance.requestRef.observe(FIRDataEventType.childRemoved) { (snapshot: FIRDataSnapshot) in
+        DBProvider.Instance.sellRequestRef.observe(FIRDataEventType.childRemoved) { (snapshot: FIRDataSnapshot) in
         
             if let data = snapshot.value as? NSDictionary {
                 if let name = data[Constants.NAME] as? String {
-                    if name == self.requester {
+                    if name == self.seller {
                         self.delegate?.canSellSpot(delegateCalled: false)
                     }
                 }
             }
         }
-     
-//        DBProvider.Instance.requestAccepted.observe(FIRDataEventType.childAdded) { (snapshot: FIRDataSnapshot) in
-//            
-//            if let data = snapshot.value as? NSDictionary {
-//                if let name = data[Constants.NAME] as? String {
-//                    if self.requester == "" {
-//                        self.requester = name;
-//                        self.delegate?.requesterAcceptedSpot(requestAccepted: true, requesterName: self.requester)
-//                    }
-//                }
-//            }
-//        }
-//
     
     }
     
     func requestSpot(latitude: Double, longitude: Double){
-        let data: Dictionary<String, Any> = [Constants.NAME: requester, Constants.LATITUDE: latitude, Constants.LONGITUDE: longitude];
-        DBProvider.Instance.requestRef.childByAutoId().setValue(data);
+        let data: Dictionary<String, Any> = [Constants.NAME: seller, Constants.LATITUDE: latitude, Constants.LONGITUDE: longitude];
+        DBProvider.Instance.sellRequestRef.childByAutoId().setValue(data);
     }
     
     func sellerCancelSpot(){
-        DBProvider.Instance.requestRef.child(requester_id).removeValue();
+        DBProvider.Instance.sellRequestRef.child(seller_id).removeValue();
     }
-} // 
+    
+    
+    //        DBProvider.Instance.requestAccepted.observe(FIRDataEventType.childAdded) { (snapshot: FIRDataSnapshot) in
+    //
+    //            if let data = snapshot.value as? NSDictionary {
+    //                if let name = data[Constants.NAME] as? String {
+    //                    if self.requester == "" {
+    //                        self.requester = name;
+    //                        self.delegate?.requesterAcceptedSpot(requestAccepted: true, requesterName: self.requester)
+    //                    }
+    //                }
+    //            }
+    //        }
+    //
+    
+}

@@ -126,7 +126,7 @@
                                     <color key="titleShadowColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="requestSpot:" destination="mrn-Dt-Nke" eventType="touchUpInside" id="RG9-ug-ymR"/>
+                                    <action selector="sellSpot:" destination="mrn-Dt-Nke" eventType="touchUpInside" id="Pxq-on-Qut"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEA-We-YYO">
@@ -139,7 +139,7 @@
                                     <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="sellSpot:" destination="mrn-Dt-Nke" eventType="touchUpInside" id="LlC-da-MUI"/>
+                                    <action selector="requestSpot:" destination="mrn-Dt-Nke" eventType="touchUpInside" id="jMF-8p-93w"/>
                                 </connections>
                             </button>
                         </subviews>

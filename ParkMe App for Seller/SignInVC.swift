@@ -23,7 +23,7 @@ class SignInVC: UIViewController {
                 self.alertUser(title: "Problem with Authentication", message: message!);
             }
             else{
-                ParkingHandler.Instance.requester = self.EmailTextField.text!;
+                ParkingHandler.Instance.seller = self.EmailTextField.text!;
                 self.performSegue(withIdentifier: self.RIDER_SEGUE, sender: nil)
                 }
             });

@@ -22,7 +22,7 @@ class RequesterHandler {
     
     func listenToRequests(){
         
-        DBProvider.Instance.requestRef.observe(FIRDataEventType.childAdded){
+        DBProvider.Instance.sellRequestRef.observe(FIRDataEventType.childAdded){
             (snapshot: FIRDataSnapshot) in
             if let data = snapshot.value as? NSDictionary {
                 if let latitude = data[Constants.LATITUDE] as?

@@ -10,13 +10,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkMe App for Seller/RiderVC.swift"
-            timestampString = "509091280.91621"
+            timestampString = "509309048.192543"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "requestSpot(_:)"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "alertUser(title:message:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ParkMe App for Seller/RiderVC.swift"
+            timestampString = "509234222.309885"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6"
+            landmarkName = "RiderVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ParkMe_App_for_Seller_for_Seller.RiderVC.__deallocating_deinit"
+                  moduleName = "ParkMe App for Seller for Seller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elybenari/Desktop/ParkMe%20App/ParkMe%20App%20for%20Seller/ParkMe%20App%20for%20Seller/RiderVC.swift"
+                  timestampString = "509311193.053154"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ParkMe_App_for_Seller_for_Seller.RiderVC.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ParkMe_App_for_Seller_for_Seller.RiderVC"
+                  moduleName = "ParkMe App for Seller for Seller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elybenari/Desktop/ParkMe%20App/ParkMe%20App%20for%20Seller/ParkMe%20App%20for%20Seller/RiderVC.swift"
+                  timestampString = "509311193.056512"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ParkMe_App_for_Seller_for_Seller.RiderVC.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ParkMe_App_for_Seller_for_Seller.RiderVC&gt;"
+                  moduleName = "ParkMe App for Seller for Seller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elybenari/Desktop/ParkMe%20App/ParkMe%20App%20for%20Seller/ParkMe%20App%20for%20Seller/RiderVC.swift"
+                  timestampString = "509311193.058175"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ParkMe_App_for_Seller_for_Seller.RiderVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ParkMe_App_for_Seller_for_Seller.RiderVC&gt;"
+                  moduleName = "ParkMe App for Seller for Seller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elybenari/Desktop/ParkMe%20App/ParkMe%20App%20for%20Seller/ParkMe%20App%20for%20Seller/RiderVC.swift"
+                  timestampString = "509311193.059518"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "8"
+                  endingLineNumber = "8"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
