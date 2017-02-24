@@ -104,7 +104,7 @@ class RequestVC: UITableViewController, CLLocationManagerDelegate {
         let roundedDistance = round(distance * 100) / 100
         
         let distanceInMiles = roundedDistance * 0.621
-        let roundedDistanceInMiles = round(distanceInMiles * 100) / 100
+        let roundedDistanceInMiles = round(distanceInMiles * 1000) / 1000
 
         
         cell.textLabel?.text = sellerUserNames[indexPath.row] + " - \(roundedDistanceInMiles) miles away"
