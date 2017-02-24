@@ -1,4 +1,5 @@
 
+// Handler for people wanting to buy parking spots
 
 import Foundation
 import FirebaseDatabase

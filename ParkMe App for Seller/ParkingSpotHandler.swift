@@ -1,4 +1,6 @@
 
+// Handler for those wanting to sell their parking spot
+
 import Foundation
 import FirebaseDatabase
 import FirebaseAuth

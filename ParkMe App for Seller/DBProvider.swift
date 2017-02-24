@@ -27,7 +27,7 @@ class DBProvider {
         return dbRef.child(Constants.CUSTOMER);
     }
     
-    // request ref
+    // seller ref
     
     var sellRequestRef: FIRDatabaseReference {
         return dbRef.child(Constants.SELL_REQUEST)

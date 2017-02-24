@@ -24,7 +24,7 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
+	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Location Required</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

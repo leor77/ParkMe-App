@@ -2,9 +2,27 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import MapKit
+import CoreLocation
 
-class RequestVC: UITableViewController {
+struct user {
+    var userName: String
+    var latitude: Double
+    var longitude: Double
+}
 
+class RequestVC: UITableViewController, CLLocationManagerDelegate {
+    
+    var locationManager = CLLocationManager()
+    
+    var sellerUserNames = [String]()
+    var sellerLongitudes = [Double]()
+    var sellerLatitudes = [Double]()
+    
+    var requestLocations = [CLLocationCoordinate2D]()
+    
+    var userList = [user]()
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToMain" {
@@ -14,14 +32,41 @@ class RequestVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        let databaseRef = FIRDatabase.database().reference()
+        databaseRef.child("Sell_Request").observe(FIRDataEventType.childAdded, with: { (FIRDataSnapshot) in
+            
+            if let data = FIRDataSnapshot.value as? NSDictionary {
+                if let name = data[Constants.NAME] as? String {
+                    if let lat = data["latitude"] as? Double {
+                        if let long = data["longitude"] as? Double {
+                            
+                            print("\(self.sellerUserNames) Location: Latitude: \(lat), Longitude: \(long)")
+                            
+                            self.sellerUserNames.append(name)
+                            self.requestLocations.append(CLLocationCoordinate2D(latitude: lat, longitude: long))
+                            
+                            self.tableView.reloadData()
+                            
+                        }
+                    }
+                }
+            }
+        })
     }
 
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        let location = locationManager.location?.coordinate
+        }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,14 +83,31 @@ class RequestVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        
+        return sellerUserNames.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        cell.textLabel?.text = "test"
+        // Find distance b/w user locations -  requestLocations[indexPath.row]
+        
+        let location = locationManager.location?.coordinate
+        
+        let buyerLocation = CLLocation(latitude: (location?.latitude)!, longitude: (location?.longitude)!)
+        
+        let sellerLocation = CLLocation(latitude: requestLocations[indexPath.row].latitude, longitude: requestLocations[indexPath.row].longitude)
+        
+        let distance = buyerLocation.distance(from: sellerLocation) / 1000
+        
+        let roundedDistance = round(distance * 100) / 100
+        
+        let distanceInMiles = roundedDistance * 0.621
+        let roundedDistanceInMiles = round(distanceInMiles * 100) / 100
+
+        
+        cell.textLabel?.text = sellerUserNames[indexPath.row] + " - \(roundedDistanceInMiles) miles away"
      
         return cell
     }
