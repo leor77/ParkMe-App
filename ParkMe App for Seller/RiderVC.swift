@@ -91,6 +91,14 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
         }
     }
     
+    
+    @IBAction func requestSpot(_ sender: Any) {
+        
+        RequesterHandler.Instance.delegate = self;
+        RequesterHandler.Instance.listenToRequests();
+        
+    }
+    
     func acceptSpot(lat: Double, long: Double) {
 
         parkingSpotRequest(title: "Spot Request", message: "You have a spot available at this location: Lat: \(lat), Long: \(long)", requestAlive: true);
