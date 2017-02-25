@@ -184,6 +184,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ldp-Sx-ZLk" kind="show" identifier="showSpotLocation" id="GAT-5M-m1I"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -203,6 +206,47 @@
             </objects>
             <point key="canvasLocation" x="1791" y="817"/>
         </scene>
+        <!--Spot LocationVC-->
+        <scene sceneID="X1j-xe-bri">
+            <objects>
+                <viewController id="ldp-Sx-ZLk" customClass="SpotLocationVC" customModule="ParkMe_App_for_Seller_for_Seller" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fdm-qa-Bb7"/>
+                        <viewControllerLayoutGuide type="bottom" id="yad-wo-N5E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3gd-Mr-bOw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bVH-f4-NEa">
+                                <rect key="frame" x="20" y="20" width="374" height="404"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaW-Jf-nBW">
+                                <rect key="frame" x="36" y="466" width="343" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.3921568627" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="Purchase Spot">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="purchaseSpot:" destination="ldp-Sx-ZLk" eventType="touchUpInside" id="Yj9-mn-sEU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="bVH-f4-NEa" id="GEp-RA-kfL"/>
+                        <outlet property="purchaseSpotButton" destination="AaW-Jf-nBW" id="0IG-Bh-dhv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wjK-EX-1Nx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2598.5507246376815" y="820.92391304347836"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="CpU-kI-EzA">
             <objects>
@@ -221,6 +265,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XX7-yZ-Y4M"/>
+        <segue reference="RKz-Pv-jVt"/>
     </inferredMetricsTieBreakers>
 </document>
