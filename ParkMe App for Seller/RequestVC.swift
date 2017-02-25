@@ -18,10 +18,17 @@ class RequestVC: UITableViewController, CLLocationManagerDelegate {
         }
         else if segue.identifier == "showSpotLocation" {
             
-            let rowNumber = self.tableView.indexPathForSelectedRow?.row
-            print(rowNumber)
+            if let _destination = segue.destination as? SpotLocationVC {
+            
+                if let row = self.tableView.indexPathForSelectedRow?.row {
+                
+                _destination.requestLocation = requestLocations[row]
+                _destination.requestUsername = sellerUserNames[row]
+                
+                }
+            }
         }
-    }
+    } 
     
     override func viewDidLoad() {
         super.viewDidLoad()
