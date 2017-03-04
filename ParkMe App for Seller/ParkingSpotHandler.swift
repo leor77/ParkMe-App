@@ -45,13 +45,12 @@ class ParkingHandler {
                 }
             }
         }
-    
     }
     
-    func requestSpot(latitude: Double, longitude: Double){
-        let data: Dictionary<String, Any> = [Constants.NAME: seller, Constants.LATITUDE: latitude, Constants.LONGITUDE: longitude];
+    func requestSpot(user_ID: String, latitude: Double, longitude: Double){
+        let data: Dictionary<String, Any> = ["user_ID": user_ID, Constants.NAME: seller, Constants.LATITUDE: latitude, Constants.LONGITUDE: longitude];
         DBProvider.Instance.sellRequestRef.childByAutoId().setValue(data);
-    }
+    } // Seller sells spot
     
     func sellerCancelSpot(){
         DBProvider.Instance.sellRequestRef.child(seller_id).removeValue();

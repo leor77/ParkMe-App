@@ -2,19 +2,30 @@
 import UIKit
 import MapKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class SpotLocationVC: UIViewController, MKMapViewDelegate {
     
     
     var requestLocation = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-    
     var requestUsername = ""
+    var ref = FIRDatabase.database().reference()
     
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var purchaseSpotButton: UIButton!
-    @IBAction func purchaseSpot(_ sender: Any) {
+    
+    @IBAction func test(_ sender: Any) {
         
-        // let ref = FIRDatabase.database().reference()
+       // ref.child("Sell_Request").queryOrdered(byChild: "name").queryEqual(toValue: requestUsername).setValue("true", forKey: "Request_Made")
+        
+        ref.child("Sell_Request").queryOrdered(byChild: "name").queryEqual(toValue: requestUsername).observeSingleEvent(of: .value, with: { (snapshot : FIRDataSnapshot) in
+            
+            snapshot.setValue(true, forKey: "Request_Made");
+            
+            })
+        }
+    
+    @IBAction func purchaseSpot(_ sender: Any) {
         
         let buyerLocation = CLLocation(latitude: self.requestLocation.latitude, longitude: self.requestLocation.longitude)
         
@@ -35,33 +46,12 @@ class SpotLocationVC: UIViewController, MKMapViewDelegate {
             }
             
         })
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        //ref.queryOrdered(byChild: "Sell_Request").queryEqual(toValue: requestUsername).
-            
-//            { (FIRDataSnapshot) in
-//            
-//            if let data = FIRDataSnapshot.value as? NSDictionary {
-//                if let name = data[Constants.NAME] as? String {
-
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let region = MKCoordinateRegion(center: requestLocation, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        let region = MKCoordinateRegion(center: requestLocation, span: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001))
         
         mapView.setRegion(region, animated: true)
         

@@ -2,6 +2,7 @@
 
 import UIKit
 import MapKit
+import FirebaseAuth
 
 class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, ParkerController, sellerController {
     
@@ -17,6 +18,9 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
     private var acceptedSpot = false;
     private var canSellSpot = true;
     
+    let user = FIRAuth.auth()?.currentUser
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -24,6 +28,9 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
         
         ParkingHandler.Instance.sellerListenToMsgs()
         ParkingHandler.Instance.delegate = self
+        
+        let currentEmail = user?.email
+        let currentID = user?.uid
         
     }
     
@@ -84,7 +91,10 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
     
     @IBAction func sellSpot(_ sender: Any) {
         if (canSellSpot) {
-            ParkingHandler.Instance.requestSpot(latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude))
+            
+            let currentID = user?.uid
+            
+            ParkingHandler.Instance.requestSpot(user_ID: currentID!, latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude))
         } else {
             parkerCancelledRequest = true;
             ParkingHandler.Instance.sellerCancelSpot();

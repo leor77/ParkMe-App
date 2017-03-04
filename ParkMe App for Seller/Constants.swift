@@ -17,5 +17,6 @@ class Constants {
     static let NAME = "name"
     static let LATITUDE = "latitude"
     static let LONGITUDE = "longitude"
+    static let OFFER_MADE = "offer_made"
     
 }

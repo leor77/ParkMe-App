@@ -12,10 +12,7 @@ class RequesterHandler {
     static let _instance = RequesterHandler();
     
     weak var delegate: ParkerController?;
-    
-    var requester = "";
-    var requester_id = "";
-    
+    var customer = ""
     
     static var Instance: RequesterHandler {
         return _instance;
@@ -23,7 +20,7 @@ class RequesterHandler {
     
     func listenToRequests(){
         
-        DBProvider.Instance.sellRequestRef.observe(FIRDataEventType.childAdded){
+        DBProvider.Instance.sellRequestRef.observe(FIRDataEventType.childAdded)  {
             (snapshot: FIRDataSnapshot) in
             if let data = snapshot.value as? NSDictionary {
                 if let latitude = data[Constants.LATITUDE] as?
@@ -38,7 +35,7 @@ class RequesterHandler {
     }
     
     func acceptedParkingSpot(lat: Double, long: Double){
-        let data: Dictionary<String, Any> = [Constants.NAME: requester, Constants.LATITUDE: lat, Constants.LONGITUDE: long]
+        let data: Dictionary<String, Any> = [Constants.NAME: customer, Constants.LATITUDE: lat, Constants.LONGITUDE: long]
         DBProvider.Instance.requestAccepted.childByAutoId().setValue(data)
 
 }
