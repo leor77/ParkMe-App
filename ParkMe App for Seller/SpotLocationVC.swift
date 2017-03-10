@@ -11,23 +11,38 @@ class SpotLocationVC: UIViewController, MKMapViewDelegate {
     var requestUsername = ""
     var ref = FIRDatabase.database().reference()
     
+    let user = FIRAuth.auth()?.currentUser
+    
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var purchaseSpotButton: UIButton!
     
     @IBAction func test(_ sender: Any) {
         
-       // ref.child("Sell_Request").queryOrdered(byChild: "name").queryEqual(toValue: requestUsername).setValue("true", forKey: "Request_Made")
+      
+        let buyerName = user?.email
         
-        ref.child("Sell_Request").queryOrdered(byChild: "name").queryEqual(toValue: requestUsername).observeSingleEvent(of: .value, with: { (snapshot : FIRDataSnapshot) in
-            
-            snapshot.setValue(true, forKey: "Request_Made");
-            
+        if (buyerName != requestUsername){  // Make sure buyer is not purchasing their own spot
+        
+        ref.child("Sell_Request").queryOrdered(byChild: "name").queryEqual(toValue: requestUsername).observe(.value, with: { dataSnapshot in
+            let enumerator = dataSnapshot.children
+            while let sell_request = enumerator.nextObject() as? FIRDataSnapshot {
+                sell_request.ref.child("Request_Made").setValue(true)
+                sell_request.ref.child("Current_Requester").setValue(buyerName)
+                sell_request.ref.child("buyer_latitude").setValue(self.requestLocation.latitude)
+                sell_request.ref.child("buyer_longitude").setValue(self.requestLocation.longitude)
+                
+                }
             })
         }
+    }
+    
     
     @IBAction func purchaseSpot(_ sender: Any) {
         
-        let buyerLocation = CLLocation(latitude: self.requestLocation.latitude, longitude: self.requestLocation.longitude)
+            //let ref = FIRDatabase.database().reference()
+            let buyerLocation = CLLocation(latitude: self.requestLocation.latitude, longitude: self.requestLocation.longitude)
+            let data: Dictionary<String, Any> = [Constants.NAME: ParkingHandler.Instance.seller, Constants.SELLER: self.requestUsername];
+            DBProvider.Instance.requestAccepted.childByAutoId().setValue(data);
         
         CLGeocoder().reverseGeocodeLocation(buyerLocation, completionHandler: { (placemarks, error) in
             
@@ -46,21 +61,13 @@ class SpotLocationVC: UIViewController, MKMapViewDelegate {
             }
             
         })
-    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let region = MKCoordinateRegion(center: requestLocation, span: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001))
-        
-        mapView.setRegion(region, animated: true)
-        
-        let annotation = MKPointAnnotation()
-        
-        annotation.coordinate = requestLocation
-        annotation.title = "Available Spot: \(requestUsername)"
-        
-        mapView.addAnnotation(annotation)
-        
-    }
 }
+
+
+}
+
+
+
+
+

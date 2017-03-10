@@ -1,5 +1,4 @@
 
-
 import UIKit
 import MapKit
 import FirebaseAuth
@@ -20,18 +19,13 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
     
     let user = FIRAuth.auth()?.currentUser
     
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         initializeLocationMgr()
-        
-        ParkingHandler.Instance.sellerListenToMsgs()
+
         ParkingHandler.Instance.delegate = self
-        
-        let currentEmail = user?.email
-        let currentID = user?.uid
-        
+        ParkingHandler.Instance.sellerListenToMsgs()
     }
     
     private func initializeLocationMgr() {
@@ -81,20 +75,19 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
         }
     }
     
-//    func requesterAcceptedSpot(requestAccepted: Bool, requesterName: String) {
-//        if requestAccepted {
-//            alertUser(title: "Parking Spot Sold", message: "Your parking spot was sold to \(requesterName)")
-//        }
-//        
-//    }
-    
+    func requesterAcceptedSpot(requestAccepted: Bool, requesterName: String) {
+        if requestAccepted {
+            alertUser(title: "Parking Spot Sold", message: "Your parking spot was sold to \(requesterName)")
+        }
+    }
     
     @IBAction func sellSpot(_ sender: Any) {
         if (canSellSpot) {
             
             let currentID = user?.uid
+            let currentName = user?.email
             
-            ParkingHandler.Instance.requestSpot(user_ID: currentID!, latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude))
+            ParkingHandler.Instance.sellSpot(user_ID: currentID!, name: currentName!, requestMade: false, currentRequest: "", buyer_latitude: 0, buyer_longitude: 0, latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude))
         } else {
             parkerCancelledRequest = true;
             ParkingHandler.Instance.sellerCancelSpot();
@@ -110,8 +103,12 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
     }
     
     func acceptSpot(lat: Double, long: Double) {
-
+        
         parkingSpotRequest(title: "Spot Request", message: "You have a spot available at this location: Lat: \(lat), Long: \(long)", requestAlive: true);
+    }
+    
+    func acceptOffer(lat: Double, long: Double, name: String) {
+        parkingSpotRequest(title: "Purchase Request", message: "You have an offer from someone at this location: Lat: \(lat), Long: \(long)", requestAlive: true);
     }
     
     @IBAction func logout(_ sender: Any) {
@@ -124,22 +121,19 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
     }
     
     @IBAction func switchToRequests(_ sender: Any) {
-        
         self.performSegue(withIdentifier: "showRequestVC", sender: nil)
-        
     }
     
     
     private func parkingSpotRequest(title: String, message: String, requestAlive: Bool){
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert);
         if requestAlive {
             let accept = UIAlertAction(title: "Accept", style: .default, handler: { (alertAction: UIAlertAction)
                 in
                 
                 self.acceptedSpot = true;
-                
-                RequesterHandler.Instance.acceptedParkingSpot(lat: Double(self.userLocation!.latitude), long: Double(self.userLocation!.longitude))
+                                
+                ParkingHandler.Instance.acceptOffer(lat: Double(self.userLocation!.latitude), long: Double(self.userLocation!.longitude))
             })
             
             let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil);
@@ -152,11 +146,9 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, P
         }
         
         present(alert, animated: true, completion: nil);
-        
     }
     
     private func alertUser(title: String, message: String){
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert);
         let ok = UIAlertAction(title: "Ok", style: .default, handler: nil);
         alert.addAction(ok);
