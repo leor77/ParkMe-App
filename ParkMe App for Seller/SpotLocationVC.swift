@@ -16,30 +16,26 @@ class SpotLocationVC: UIViewController, MKMapViewDelegate {
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var purchaseSpotButton: UIButton!
     
-    @IBAction func test(_ sender: Any) {
+    @IBAction func purchaseSpot(_ sender: Any) {
         
-      
         let buyerName = user?.email
         
         if (buyerName != requestUsername){  // Make sure buyer is not purchasing their own spot
-        
-        ref.child("Sell_Request").queryOrdered(byChild: "name").queryEqual(toValue: requestUsername).observe(.value, with: { dataSnapshot in
-            let enumerator = dataSnapshot.children
-            while let sell_request = enumerator.nextObject() as? FIRDataSnapshot {
-                sell_request.ref.child("Request_Made").setValue(true)
-                sell_request.ref.child("Current_Requester").setValue(buyerName)
-                sell_request.ref.child("buyer_latitude").setValue(self.requestLocation.latitude)
-                sell_request.ref.child("buyer_longitude").setValue(self.requestLocation.longitude)
-                
+            
+            ref.child("Sell_Request").queryOrdered(byChild: "name").queryEqual(toValue: requestUsername).observe(.value, with: { dataSnapshot in
+                let enumerator = dataSnapshot.children
+                while let sell_request = enumerator.nextObject() as? FIRDataSnapshot {
+                    sell_request.ref.child("Request_Made").setValue(true)
+                    sell_request.ref.child("Current_Requester").setValue(buyerName)
+                    sell_request.ref.child("buyer_latitude").setValue(self.requestLocation.latitude)
+                    sell_request.ref.child("buyer_longitude").setValue(self.requestLocation.longitude)
+                    
                 }
             })
         }
-    }
-    
-    
-    @IBAction func purchaseSpot(_ sender: Any) {
         
-            //let ref = FIRDatabase.database().reference()
+        
+        /*
             let buyerLocation = CLLocation(latitude: self.requestLocation.latitude, longitude: self.requestLocation.longitude)
             let data: Dictionary<String, Any> = [Constants.NAME: ParkingHandler.Instance.seller, Constants.SELLER: self.requestUsername];
             DBProvider.Instance.requestAccepted.childByAutoId().setValue(data);
@@ -61,7 +57,7 @@ class SpotLocationVC: UIViewController, MKMapViewDelegate {
             }
             
         })
-    
+    */
 }
 
 

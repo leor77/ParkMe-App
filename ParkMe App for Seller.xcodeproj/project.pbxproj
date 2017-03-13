@@ -24,6 +24,7 @@
 		5F615B411DFF3E5D001D873B /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F615B401DFF3E5D001D873B /* AuthProvider.swift */; };
 		5F7FF56F1E5B85F600E19913 /* RequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FF56E1E5B85F600E19913 /* RequestVC.swift */; };
 		5F7FF5731E60FF4B00E19913 /* SpotLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FF5721E60FF4B00E19913 /* SpotLocationVC.swift */; };
+		5F9FA8D41E73937F002DEE1B /* Logomakr_6IJxJZ.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9FA8D31E73937F002DEE1B /* Logomakr_6IJxJZ.png */; };
 		D1B78DF7868F0951FEE4D3A2 /* Pods_ParkMe_App_for_SellerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A345DAA5F97670D45DC7A268 /* Pods_ParkMe_App_for_SellerTests.framework */; };
 		D501230CDDDA8317496F3478 /* Pods_ParkMe_App_for_Seller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6319444D7D9F1E39C66E26 /* Pods_ParkMe_App_for_Seller.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		5F615B401DFF3E5D001D873B /* AuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		5F7FF56E1E5B85F600E19913 /* RequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestVC.swift; sourceTree = "<group>"; };
 		5F7FF5721E60FF4B00E19913 /* SpotLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotLocationVC.swift; sourceTree = "<group>"; };
+		5F9FA8D31E73937F002DEE1B /* Logomakr_6IJxJZ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logomakr_6IJxJZ.png; sourceTree = "<group>"; };
 		A345DAA5F97670D45DC7A268 /* Pods_ParkMe_App_for_SellerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkMe_App_for_SellerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A89986B260D606DDEC890ED5 /* Pods-ParkMe App for SellerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkMe App for SellerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkMe App for SellerUITests/Pods-ParkMe App for SellerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB4FBDA7C2E4DA8776C31D73 /* Pods-ParkMe App for SellerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkMe App for SellerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkMe App for SellerTests/Pods-ParkMe App for SellerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				5F615B361DFA4233001D873B /* Model */,
 				5F615B031DFA37D9001D873B /* AppDelegate.swift */,
 				5F615B071DFA37D9001D873B /* Main.storyboard */,
+				5F9FA8D31E73937F002DEE1B /* Logomakr_6IJxJZ.png */,
 				5F615B0A1DFA37D9001D873B /* Assets.xcassets */,
 				5F615B0C1DFA37D9001D873B /* LaunchScreen.storyboard */,
 				5F615B0F1DFA37D9001D873B /* Info.plist */,
@@ -343,6 +346,7 @@
 				5F615B0E1DFA37D9001D873B /* LaunchScreen.storyboard in Resources */,
 				5F615B3E1DFA5305001D873B /* GoogleService-Info.plist in Resources */,
 				5F615B0B1DFA37D9001D873B /* Assets.xcassets in Resources */,
+				5F9FA8D41E73937F002DEE1B /* Logomakr_6IJxJZ.png in Resources */,
 				5F615B091DFA37D9001D873B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
