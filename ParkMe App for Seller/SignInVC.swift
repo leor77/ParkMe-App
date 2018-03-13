@@ -9,17 +9,27 @@ class SignInVC: UIViewController {
     @IBOutlet weak var PasswordTextField: UITextField!
     
     public let RIDER_SEGUE = "RiderVC"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        MyTimer.shared.start(withKey: "login")
+        MyTimer.shared.start(withKey: "register")
+        MyTimer.shared.start(withKey: "sell_spot")
+        MyTimer.shared.start(withKey: "buy_spot")
+        MyTimer.shared.start(withKey: "buyer_arrival")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     @IBAction func LogIn(_ sender: Any) {
         
         if (EmailTextField.text != "" && PasswordTextField.text != "") {
-        AuthProvider.Instance.login(withEmail: EmailTextField.text!, password: PasswordTextField.text!, loginHandler: { (message) in
             
+        AuthProvider.Instance.login(withEmail: EmailTextField.text!, password: PasswordTextField.text!, loginHandler: { (message) in
+
             if (message != nil) {
                 self.alertUser(title: "Problem with Authentication", message: message!);
             }
@@ -34,15 +44,18 @@ class SignInVC: UIViewController {
         }
         
     }
-    
+
     @IBAction func SignUp(_ sender: Any) {
     
         if (EmailTextField.text != "" && PasswordTextField.text != ""){
+            
             AuthProvider.Instance.signUp(withEmail: EmailTextField.text!, password: PasswordTextField.text!, loginHandler: { (message) in
+                
                 if (message != nil){
                     self.alertUser(title: "Problem with Account Registration", message: message!);
                 }
                 else{
+                    ParkingHandler.Instance.seller = self.EmailTextField.text!;
                     self.performSegue(withIdentifier: self.RIDER_SEGUE, sender: nil);
                 }
             });
@@ -52,7 +65,6 @@ class SignInVC: UIViewController {
         }
     }
     
-    
     private func alertUser(title: String, message: String){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert);
@@ -60,5 +72,5 @@ class SignInVC: UIViewController {
         alert.addAction(ok);
         present(alert, animated: true, completion: nil);
     }
-
+    
 }

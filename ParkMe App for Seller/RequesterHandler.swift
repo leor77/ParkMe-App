@@ -5,7 +5,7 @@ import Foundation
 import FirebaseDatabase
 
 protocol ParkerController: class {
-    func acceptSpot(lat: Double, long: Double);
+    func acceptSpot(lat: Double, long: Double, buyer: String, dist: Double, price: String);
 }
 
 class RequesterHandler {
@@ -20,14 +20,49 @@ class RequesterHandler {
     
     func listenToRequests(){
         
-        DBProvider.Instance.sellRequestRef.observe(FIRDataEventType.childAdded)  {
+        DBProvider.Instance.buyRequestRef.queryOrdered(byChild: "time").observe(FIRDataEventType.childAdded)  {
             (snapshot: FIRDataSnapshot) in
             if let data = snapshot.value as? NSDictionary {
-                if let latitude = data[Constants.LATITUDE] as?
-                    Double {
-                    if let longitude = data[Constants.LONGITUDE] as?
-                        Double {
-                        self.delegate?.acceptSpot(lat: latitude, long: longitude)
+                if let sellerName = data["seller_name"] as? String {
+                    if data["accepted"] == nil {
+                        if sellerName == ParkingHandler.Instance.seller {
+                            if let latitude = data[Constants.LATITUDE] as?
+                                Double {
+                                if let longitude = data[Constants.LONGITUDE] as?
+                                    Double {
+                                    if let price = data["Price"] {
+                                        if let distance = data["Distance"] {
+                                            self.delegate?.acceptSpot(lat: latitude, long: longitude, buyer: (data["name"] as? String)!, dist: distance as! Double, price: price as! String)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        DBProvider.Instance.buyRequestRef.queryOrdered(byChild: "time").observe(FIRDataEventType.childChanged)  {
+            (snapshot: FIRDataSnapshot) in
+            if let data = snapshot.value as? NSDictionary {
+                if let sellerName = data["seller_name"] as? String {
+                    if data["accepted"] == nil {
+                        if sellerName == ParkingHandler.Instance.seller {
+                            if let latitude = data[Constants.LATITUDE] as?
+                                Double {
+                                if let longitude = data[Constants.LONGITUDE] as?
+                                    Double {
+                                    if let price = data["Price"] {
+                                        if let distance = data["Distance"] {
+                                        self.delegate?.acceptSpot(lat: latitude, long: longitude, buyer: (data["name"] as? String)!, dist: distance as! Double, price: price as! String)
+                                        
+                                        }
+                                    }
+                                
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -38,6 +73,6 @@ class RequesterHandler {
         let data: Dictionary<String, Any> = [Constants.NAME: customer, Constants.LATITUDE: lat, Constants.LONGITUDE: long]
         DBProvider.Instance.requestAccepted.childByAutoId().setValue(data)
 
-}
+    }
 
 }

@@ -36,5 +36,7 @@
 	<string>1:646157337760:ios:b9e46cc1f17000e6</string>
 	<key>DATABASE_URL</key>
 	<string>https://parkme-9d357.firebaseio.com</string>
+	<key>TRACKING_ID</key>
+	<string>UA-101142837-1</string>
 </dict>
 </plist>

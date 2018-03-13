@@ -23,14 +23,20 @@ class DBProvider {
         return dbRef.child(Constants.SELLER);
     }
     
-    var customerRef: FIRDatabaseReference {
-        return dbRef.child(Constants.CUSTOMER);
+    var userRef: FIRDatabaseReference {
+        return dbRef.child(Constants.USER);
     }
     
     // seller ref
     
     var sellRequestRef: FIRDatabaseReference {
         return dbRef.child(Constants.SELL_REQUEST)
+    }
+    
+    // buy request ref
+    
+    var buyRequestRef: FIRDatabaseReference {
+        return dbRef.child(Constants.BUY_REQUEST)
     }
     
     // request accepted
@@ -40,10 +46,9 @@ class DBProvider {
     }
 
     func saveUser(withID: String, email: String, password: String) {
-        let data: Dictionary<String, Any> = [Constants.EMAIL: email, Constants.PASSWORD: password, Constants.isRequester: true];
+        let data: Dictionary<String, Any> = [Constants.EMAIL: email, Constants.PASSWORD: password];
         
-        sellerRef.child(withID).child(Constants.DATA).setValue(data); // save requester to DB
-        customerRef.child(withID).child(Constants.DATA).setValue(data); // save seller to DB
+        userRef.child(withID).child(Constants.DATA).setValue(data); // save user to DB
         
     }
     

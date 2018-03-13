@@ -17,8 +17,10 @@ class ParkingHandler {
     var seller = "";
     var seller_id = "";
     
+    let when = DispatchTime.now() + 10
+    
+    
     let user = FIRAuth.auth()?.currentUser
-   // let currentName = user?.email
     
     static var Instance: ParkingHandler {
         return _instance;
@@ -50,34 +52,11 @@ class ParkingHandler {
                 }
             }
         }
-        
-        DBProvider.Instance.sellRequestRef.queryOrdered(byChild: "name").queryEqual(toValue: Constants.NAME).observe(.childChanged, with: { dataSnapshot in
-            
-            let data = dataSnapshot.value as? NSDictionary
-            
-            if let spotAccepted = data?["Request_Made"] as? Bool {
-                
-                if spotAccepted == true {
-                
-                    if let buyerName = data?["Current_Requester"] as? String {
-                    if let buyerLat = data?["buyer_latitude"] as? Double {
-                    if let buyerLong = data?["buyer_longitude"] as? Double {
-
-                        print(buyerName)
-                        print(buyerLat)
-                        print(buyerLong)
-                    
-                            }
-                        }
-                    }
-                }
-            }
-        })
     }
 
-    
-        func sellSpot(user_ID: String, name: String, requestMade: Bool, currentRequest: String, buyer_latitude: Double, buyer_longitude: Double,  latitude: Double, longitude: Double){
-        let data: Dictionary<String, Any> = ["user_ID": user_ID, "name": name, "Request_Made": requestMade, "Current_Requester": currentRequest, "buyer_latitude": buyer_latitude, "buyer_longitude": buyer_longitude, Constants.LATITUDE: latitude, Constants.LONGITUDE: longitude];
+    func sellSpot(user_ID: String, name: String, requestMade: Bool, currentRequest: String, price: String, latitude: Double, longitude: Double){
+
+        let data: Dictionary<String, Any> = ["user_ID": user_ID, "name": name, "Price": price, Constants.LATITUDE: latitude, Constants.LONGITUDE: longitude];
         DBProvider.Instance.sellRequestRef.childByAutoId().setValue(data);
     } // Seller sells spot
     
@@ -85,11 +64,72 @@ class ParkingHandler {
         DBProvider.Instance.sellRequestRef.child(seller_id).removeValue();
     }
     
-    func acceptOffer(lat: Double, long: Double){
-        let data: Dictionary<String, Any> = [Constants.LATITUDE: lat, Constants.LONGITUDE: long]
-        DBProvider.Instance.requestAccepted.childByAutoId().setValue(data)
+    func acceptOffer(buyer: String, accept: Bool){
         
+        DBProvider.Instance.buyRequestRef.queryOrdered(byChild: "seller_name").queryEqual(toValue: self.seller).observeSingleEvent(of: .value, with: { dataSnapshot in
+            let enumerator = dataSnapshot.children
+           
+            while let buy_request = enumerator.nextObject() as? FIRDataSnapshot {
+               
+                let data = buy_request.value as? NSDictionary
+               
+                if (data?["name"] as? String) == buyer {
+                    
+                    buy_request.ref.child("accepted").setValue(accept)
+                    
+                    if accept == true {
+                       
+                        self.delegate?.updateRequesterLocation(lat: data?["latitude"] as! Double, long: data?["longitude"] as! Double)
+                    }
+                }
+                else if (data?["name"] as? String) != buyer {
+                    buy_request.ref.child("accepted").setValue(false) // buyer will be informed that their offer was not accepted
+                    
+                    DispatchQueue.main.asyncAfter(deadline: self.when) { // wait four seconds so they can get the message, and then delete their buy request
+                        buy_request.ref.removeValue()
+                    }
+                }
+            }
+        })
     }
+    
+    
+    func listenBuyerLocation(buyer: String){
+        DBProvider.Instance.buyRequestRef.queryOrdered(byChild: "seller_name").queryEqual(toValue: self.seller).observe(.value, with: { dataSnapshot in
+            let enumerator = dataSnapshot.children
+            while let buy_request = enumerator.nextObject() as? FIRDataSnapshot {
+                let data = buy_request.value as? NSDictionary
+                if (data?["name"] as? String) == buyer {
+                    if let accepted = data?["accepted"] as? Bool {
+                        if accepted == true {
+                            self.delegate?.updateRequesterLocation(lat: data?["latitude"] as! Double, long: data?["longitude"] as! Double)
+                        }
+                    }
+                }
+            }
+        })
+    
+        DBProvider.Instance.buyRequestRef.queryOrdered(byChild: "seller_name").queryEqual(toValue: self.seller).observe(.childChanged, with: { dataSnapshot in
+            let enumerator = dataSnapshot.children
+            while let buy_request = enumerator.nextObject() as? FIRDataSnapshot {
+                let data = buy_request.value as? NSDictionary
+                if (data?["name"] as? String) == buyer {
+                    if let accepted = data?["accepted"] as? Bool {
+                        if accepted == true {
+                            self.delegate?.updateRequesterLocation(lat: data?["latitude"] as! Double, long: data?["longitude"] as! Double)
+                        }
+                    }
+                }
+            }
+        })
+
+    }
+    
+    func stopAllObservers() {
+        DBProvider.Instance.buyRequestRef.removeAllObservers()
+    }
+    
+    
     
     
 }
